@@ -1,0 +1,65 @@
+<div style='padding:10px'>
+  <h1>Dentist Practice</h1>
+  <div class='mt-3 mb-3 d-flex align-items-center justify-content-center'>
+    <img src="https://plus.unsplash.com/premium_photo-1669612905191-48c67547f9a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60" style="width:650px;height:480px;" >
+  </div>
+
+  <div class='mt-3 mb-3'>
+  <% if current_user %>
+    <%= button_to 'Logout', destroy_user_session_path, class:'btn btn-danger'%>
+  <% else %>
+    <%= link_to 'Register', new_user_registration_path, class:'btn btn-primary' %>
+    <%= link_to 'Login', new_user_session_path, class:'btn btn-primary' %>
+  <% end %>
+  </div>
+
+  <h3>Who Are We?</h3>
+  <div>
+    <%= render 'about_us' %>
+  </div>
+
+
+  <h3>What do we Do?</h3>
+  <div>
+    <%= render 'what_we_do' %>
+  </div>
+
+
+  <h3 class='text-center'>When Are We Open?</h3>
+  <div>
+    <%= render 'operating_times' %>
+  </div>
+
+
+  <h3>Where are We?</h3>
+  <div>
+    <%= render 'where_to_find_us' %>
+  </div>
+
+
+  <h3>Who Can You Contact?</h3>
+  <div>
+    <%= render 'contact_us' %>
+  </div>
+
+  <h4 style='color:red'>trying custom divs</h4>
+  <div class='page-dividor'>
+    <div class='page-left' style='text-align: right; width: 500px'>
+      <p>This company has been up and running since 1846. That is a length no actual
+      dentistry company can claim, however it could seems quite interesting.
+      We've worked on my sets of teeth, including but not limited to: Albert Einsteien,
+      Adolf Hitler's Grandfather and a 20 year old Queen Elizabeth.
+      Our employees strive to deliver the best service to ease their customers minds
+      9 out of 10 dentists wish they could work here</p>
+    </div>
+    <div class='page-right' style='text-align: left; width: 500px'>
+      <p>This company has been up and running since 1846. That is a length no actual
+      dentistry company can claim, however it could seems quite interesting.
+      We've worked on my sets of teeth, including but not limited to: Albert Einsteien,
+      Adolf Hitler's Grandfather and a 20 year old Queen Elizabeth.
+      Our employees strive to deliver the best service to ease their customers minds
+      9 out of 10 dentists wish they could work here</p>
+    </div>
+  </div>
+  
+</div>
