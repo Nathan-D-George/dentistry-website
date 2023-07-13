@@ -1,0 +1,46 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Start-Time</th>
+      <th scope="col">End-Time</th>
+      <th scope="col">Purpose</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @appointments.each do |app|%>
+      <% if app.user.email == @admin.email %>
+      <tr class='table-success'>
+      <% else %>
+      <tr class='table-danger'>
+      <% end %>
+        <th scope="row"><%= app.start.strftime("%Y-%m-%d") %></th>
+        <td><%= app.start.to_formatted_s(:time) %></td>
+        <td><%= app.end.to_formatted_s(:time) %></td>
+        <td>
+          <% if app.app_type == 0%>
+            Cleaning
+          <% elsif app.app_type == 0%>
+            Extraction
+          <% elsif app.app_type == 0%>
+            Root Canal
+          <% elsif app.app_type == 0%>
+            Orthodontion
+          <% end %>
+        </td>
+        <td>
+          <% if app.user.email == @admin.email %>
+            <%= link_to 'Book Slot', new_appointment_path(start: app.start), class:'btn btn-primary'%>
+          <% else %>
+           <h4> <span class="badge bg-danger">Booked</span></h4>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+      
+
+      
