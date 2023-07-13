@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get    '/new_appointment',     to: 'appointments#new'
+  post   '/new_appointment',     to: 'appointments#create'
+  delete '/destroy_appointment', to: 'appointments#destroy'
+
   root 'main#home'
   get 'about', to: 'main#about'
 
@@ -7,8 +11,5 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "users", to: 'devise/sessions#new'
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
   
 end

@@ -23,12 +23,12 @@
   border-radius: 50%;
 }
 page-dividor{
-  width: auto;
+  /* width: auto; */
   height: 310px;
   padding: 10px;
 }
 .page-left{
-  align-items: flex-end;
+  /* align-items: flex-end; */
   width: 50%;
   min-height:100%;
   float: left;
@@ -40,7 +40,19 @@ page-dividor{
   float: right;
   padding-right: 50px;
 }
-.img-top {
+.img-top{
   display: block;
   text-align: right;
+}
+.div{
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
+  height: 300px;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #1cd8d2, #93edc7);
+  color: white;
+  margin: 100px 0;
+  border-radius: 7px;
 }

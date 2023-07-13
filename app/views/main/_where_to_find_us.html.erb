@@ -1,14 +1,20 @@
 
-
 <div class='page-dividor mt-3 mb-3'>
-  <div class='page-left d-flex' style='height:310px'>
-    <img src="https://images.unsplash.com/photo-1689078907312-78fb9d4db8aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60" class="img-circle" style="width:300px;height:300px; display: flex; justify-content: flex-end" >
+  <div class='page-left col-md-12' style='height:310px'>
+    <div class='col-md-11 d-flex justify-content-end'>
+      <img src="https://images.unsplash.com/photo-1689078907312-78fb9d4db8aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60" class="img-circle" style="width:260px;height:260px;" >
+    </div>
   </div>
-  <div clas='page-right' style='height:310px'>
-    <h6>Adress:</h6>
-    <p>&nbsp;&nbsp;21 SoAndSo St</p>
-    <p>&nbsp;&nbsp;MadeUpSuburb</p>
-    <p>&nbsp;&nbsp;MakeBelieveCity</p>
-    <p>&nbsp;&nbsp;1234</p>
+  <div class='page-right col-md-12' style='height:310px'>
+    <div class='d-flex justify-content-end'>
+      <div class='col-md-11'>
+        <h5><%= fa_icon 'map-marker' %> Address:</h5>
+        <p>&nbsp;&nbsp;21 SoAndSo St</p>
+        <p>&nbsp;&nbsp;MadeUpSuburb</p>
+        <p>&nbsp;&nbsp;MakeBelieveCity</p>
+        <p>&nbsp;&nbsp;1234</p>
+        <%= link_to 'location', 'https://www.google.com/', target: :blank%>        
+      </div>
+    </div>
   </div>
 </div>

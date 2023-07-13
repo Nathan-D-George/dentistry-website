@@ -1,15 +1,20 @@
 <div class='page-divider mt-3 mb-3'>
-  <div class='page-right' style='height:310px'>
-    <img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNsb2NrfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" class="img-circle img-top" style="width:300px;height:300px;" >
+  <div class='page-right col-md-12' style='height:310px'>
+    <div>
+      <img src="https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNsb2NrfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" class="img-circle img-top" style="width:240px;height:280px;" >
+    </div>
   </div>
-  <div clas='page-left' style='padding-left:60px; padding-top:5px;height:310px'>
-  <div>
-    <ul style='margin-bottom: 5px'>
-      <p><li>Mon-Fri: 08h00 - 16h30</li></p>
-      <p><li>Sat    : 10h00 - 14h00</li></p>
-      <p><li>Sun    : Closed</li></p>
-      <p><li>Public-Holidays: Scheduled Appointments only</li></p>
-    </ul>
+  <div class='page-left col-md-12' style='padding-top:5px;height:310px'>
+    <div class='col-md-9 d-flex justify-content-end'>
+      <ul style='margin-bottom: 5px'>
+        <p><li>Mon-Fri: 08h00 - 16h30</li></p>
+        <p><li>Sat    : 10h00 - 14h00</li></p>
+        <p><li>Sun    : Closed</li></p>
+        <p><li>Holidays: Closed</li></p>
+      </ul>
+    </div>
   </div>
-  </div>
+</div>
+<div class='row mt-4 mb-4'>
+  <%= link_to 'Make An Appointment', new_appointment_path, class:'btn btn-secondary'%>
 </div>
