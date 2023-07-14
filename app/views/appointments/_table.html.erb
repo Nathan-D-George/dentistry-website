@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @appointments.each do |app|%>
+    <% appointments.each do |app|%>
       <% if app.user.email == @admin.email %>
       <tr class='table-success'>
       <% else %>
@@ -21,11 +21,11 @@
         <td>
           <% if app.app_type == 0%>
             Cleaning
-          <% elsif app.app_type == 0%>
+          <% elsif app.app_type == 1%>
             Extraction
-          <% elsif app.app_type == 0%>
+          <% elsif app.app_type == 2%>
             Root Canal
-          <% elsif app.app_type == 0%>
+          <% elsif app.app_type == 3%>
             Orthodontion
           <% end %>
         </td>
@@ -40,7 +40,3 @@
     <% end %>
   </tbody>
 </table>
-
-      
-
-      

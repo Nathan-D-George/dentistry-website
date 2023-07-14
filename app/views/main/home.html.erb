@@ -6,22 +6,22 @@
   </div>
 
   <div data-aos='fade-in'>
-    <h3>Who Are We?</h3>
+    <h3>Who Are We? <%= fa_icon 'child' %> </h3>
     <%= render 'about_us' %>
   </div>
 
   <div data-aos='fade-left'>
-    <h3>What do we Do?</h3>
+    <h3>What do we Do? <%= fa_icon 'user-secret' %> </h3>
     <%= render 'what_we_do' %>
   </div>
   
   <div data-aos='fade-right'>
-    <h3>When Are We Open?</h3>
+    <h3>When Are We Open? <%= fa_icon 'clock-o' %> </h3>
     <%= render 'operating_times' %>
   </div>
 
   <div data-aos='zoom-in'>
-    <h3>Where are We?</h3>
+    <h3>Where are We? <%= fa_icon 'map-marker' %> </h3>
     <%= render 'where_to_find_us' %>
   </div>
   
@@ -30,4 +30,10 @@
     <%= render 'contact_us' %>
   </div>
 
-</div>
+  <div data-aos='flip-down'>
+    <h3 class='text-center'>Frequently Asked Questions  <%= fa_icon 'question-circle' %></h3>
+    <%= render 'questions' %>
+  </div>
+
+</div> 
+

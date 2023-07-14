@@ -1,25 +1,16 @@
 <h1>Appointment Schedule</h1>
 <p>(green slots are available)</p>
-<div class='mt-3 mb-3'>
+<div class='mt-3 mb-3 d-flex justify-content-center'>
+  <div style='width:1050px'>
   <% if current_user %>
-  
-  <div class='collapsible col-md-12'>
-    <input type='checkbox' id='collapsible2-head'>
-    <label for="collapsible2-head">Date 1</label>
-    <div class="collapsible-text">
-      <div>
-        <%= render 'table'%>
-      </div>
-    </div>
-  </div>
 
   <% @arrayOfDays.each do |day| %>
-  <div class='collapsible col-md-12'>
-    <input type='checkbox' id='collapsible2-head'>
-    <label for="collapsible2-head">Date <%= day.first.id+2%></label>
+  <div class='collapsible col-md-12' id="collapsible">
+    <input type='checkbox' id="collapsible2-head-<%= day.first.start.to_date%>">
+    <label for="collapsible2-head-<%= day.first.start.to_date%>"><%= day.first.start.strftime("%B - %d, %A")%></label>
     <div class="collapsible-text">
       <div>
-        <%= render 'table'%>
+        <%= render 'table', appointments: day%>
       </div>
     </div>
   </div>
@@ -29,6 +20,7 @@
     <%= link_to 'Register', new_user_registration_path, class:'btn btn-primary' %>
     <%= link_to 'Login', new_user_session_path, class:'btn btn-primary' %>
   <% end %>
+  </div>
 </div>
 
 

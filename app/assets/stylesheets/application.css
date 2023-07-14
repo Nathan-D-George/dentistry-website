@@ -15,9 +15,12 @@
  *= require font-awesome
  */
 
+.sidecol{
+  background-color: rgb(212, 212, 212);
+}
 .syscol{
-  background-color: gainsboro;
-  height: 3000px;
+  background-color: rgb(233, 233, 233);
+  height: fit-content;
 }
 .img-circle{
   border-radius: 50%;
@@ -67,8 +70,8 @@ page-dividor{
 .collapsible label {
   position: relative;
   font-weight: 600;
-  background: gainsboro;
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1),0 4px 11px 0 rgba(0, 0, 0, .08);
+  background: rgb(212, 212, 212);
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.5),0 2px 15px 0 rgba(0, 0, 0, .08);
   color:rgb(0, 0, 0);
   display: block;
   margin-bottom: 10px;
@@ -83,7 +86,7 @@ page-dividor{
   right: 15px;
   top: 15px;
   width: 18px;
-  height: 18px;
+  height: 25px;
   background: url(arrow.svg) no-repeat 0 0;
   transition: all 0.3s ease;
 }
@@ -102,8 +105,8 @@ page-dividor{
   transition: all 0.3s ease;
 }
 .collapsible input:checked ~ .collapsible-text{
-  max-height: 430px;
-  width: fit-content;
+  max-height: 490px;
+  width: 1020;
   /* padding-bottom: 25px; */
   background: gainsboro;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.1),0 4px 11px 0 rgba(0, 0, 0, 0.775);

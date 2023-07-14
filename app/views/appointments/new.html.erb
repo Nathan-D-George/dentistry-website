@@ -21,18 +21,12 @@
           <strong><%= f.label :Purpose%></strong>
           &nbsp&nbsp<%= f.select(:app_type, options_for_select(['Cleaning', 'Root_Canal', 'Extraction', 'Orthodontion']))%>
         </div>
-        <div class='col-md-6 mb-4'>
-          <strong><%= f.label :Cost%></strong>
-          &nbsp&nbsp
-          <% if :app_type == 'Cleaning'%>
-            R 200
-          <% elsif :app_type == 'Root_Canal'%>
-            R300
-          <% elsif :app_type == 'Extraction'%>
-            R350
-          <% elsif :app_type == 'Orthodontion'%>
-            R900
-          <% end %>
+        <div class='col-md-8 mb-4'>
+          <strong>Cost</strong>
+          <p>&nbsp&nbsp <strong> Cleaning: </strong> R300</p>
+          <p>&nbsp&nbsp <strong> Root Canal: </strong> R350</p>
+          <p>&nbsp&nbsp <strong> Extraction: </strong> R150</p>
+          <p>&nbsp&nbsp <strong> Orthodontion: </strong> R900</p>
         </div>
         <div class='row'>
           <div class='col-md-7 mb-3'>
@@ -46,4 +40,3 @@
     </div>
   </div>
 <% end %>
-
