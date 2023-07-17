@@ -138,7 +138,6 @@ page-dividor{
   0% {
     opacity: 0;
   }
-
   10% {
     opacity: 1;
   }
@@ -148,4 +147,12 @@ page-dividor{
   100% {
     opacity: 0;
   }
+}
+.dis{
+  pointer-events: none;
+}
+.footer{
+  position: fixed;
+  width: 2040px;
+  bottom: 0;
 }

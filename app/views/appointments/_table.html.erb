@@ -34,7 +34,8 @@
           <% if app.user.email == @admin.email %>
             <%= link_to 'Book Slot', new_appointment_path(start: app.start), class:'btn btn-primary'%>
           <% else %>
-           <h5> <span class="badge bg-danger">Booked</span></h5>
+           <!--h5> <span class="badge bg-danger">Booked</span></h5-->
+           <div class='dis'><%= link_to 'Booked', new_appointment_path(start: app.start), class:'btn btn-danger'%></div>
           <% end %>
         </td>
         <td>
@@ -42,10 +43,10 @@
             <% if app.start > @time_limit %>
               <%= link_to 'Cancel Booking', cancel_appointment_path(id: app.id), data:{turbo_method: :post, turbo_confrim: 'Cancel Appointment'}, class:'btn btn-outline-secondary'%>
             <% else %>
-              <h5> <span class="badge bg-secondary">Too Soon to Cancel!</span></h5>
+              <div class='dis'><%= link_to 'Too Soon To Cancel', new_appointment_path(start: app.start), class:'btn btn-secondary'%></div>
             <% end %>
-          <% else %>
-            <h5> <span class="badge bg-warning">Other Patient</span></h5>
+          <% elsif app.user.email != @admin.email %>
+            <div class='dis'><%= link_to 'Other Patient', new_appointment_path(start: app.start), class:'btn btn-warning'%></div>
            <% end %>
         </td>
       </tr>

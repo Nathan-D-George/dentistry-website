@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   get  '/new_appointment',    to: 'appointments#new'
   post '/new_appointment',    to: 'appointments#create'
   post '/cancel_appointment', to: 'appointments#cancel'
+  
 
   root 'main#home'
   get 'about', to: 'main#about'
+  get '/show_employees', to: 'main#show_employees'
 
   devise_for :users
 
@@ -14,15 +16,3 @@ Rails.application.routes.draw do
   end
   
 end
-
-=begin
-  
-    AREAS FOR EXPANSION ON THIS WEBSITE
-
-    1. make that people can cancel their appointments unless it is within 24 hours
-
-    2. include an actual map extension to see location
-
-    3. 
-  
-=end

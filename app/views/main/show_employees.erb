@@ -1,0 +1,22 @@
+<h1 style='padding:10px'> Employees </h1>
+<div class='text-center d-flex justify-content-center'>
+  <div class='d-flex align-items-center'>
+    <% @employees.each do |emp| %>
+      <div class='d-flex justify-content-center align-items-center' style='padding: 20px'>
+        <div class="card" style="width: 20rem; height: 29rem; background-color: lightgrey">
+          <div class="card-body">
+            <div class='col-md-12 mb-4'>
+              <img src="<%= emp[:photo] %>"  class="img-circle" style="width:200px;height:200px;">
+              <h5 class="card-title" style='padding-top:15px; padding-bottom:15px'>Dr <%= emp[:name] %> </h5>
+              <p><strong> Qualification </strong></p>
+              <p><%= emp[:qualification] %></p>
+              <p><strong> Experience </strong></p>
+              <p><%= emp[:experience] %> years</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+

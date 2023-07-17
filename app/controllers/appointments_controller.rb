@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
   $temp_app = nil
+
   def list
     clean_up_protocol
     create_new_day
@@ -22,7 +23,6 @@ class AppointmentsController < ApplicationController
     }
     
     @time_limit = Time.now+26.hours
-    #debugger
   end
 
   def new
@@ -39,7 +39,7 @@ class AppointmentsController < ApplicationController
       @appointment.user  = current_user
       t = params[:appointment][:app_type]
       t == 'Cleaning' ? @appointment.app_type = 0 : t == 'Root_Canal' ? @appointment.app_type = 1 : t == 'Extraction' ? @appointment.app_type = 2 :  @appointment.app_type = 3
-      t == 'Cleaning' ? @appointment.cost = 300 : t == 'Root_Canal' ? @appointment.cost = 350 : t == 'Extraction' ? @appointment.cost = 150 :  @appointment.cost = 900
+      t == 'Cleaning' ? @appointment.cost = 300 :   t == 'Root_Canal' ? @appointment.cost = 350 : t == 'Extraction' ? @appointment.cost = 150 :  @appointment.cost = 900
       @appointment.save
     else
       flash[:alert] = 'It seems the appointment was already booked. Apologies.'
@@ -49,8 +49,8 @@ class AppointmentsController < ApplicationController
 
   def cancel
     @appointment = Appointment.find(params[:id].to_i)
-    @appointment.user = User.first
-    @appointment.cost = 300
+    @appointment.user     = User.first
+    @appointment.cost     = 300
     @appointment.app_type = 0
     @appointment.save
     redirect_to list_of_apps_path
@@ -89,3 +89,4 @@ class AppointmentsController < ApplicationController
     }
   end
 end
+
