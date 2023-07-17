@@ -21,6 +21,8 @@ class AppointmentsController < ApplicationController
       @arrayOfDays.append(thisDay)
     }
     
+    @time_limit = Time.now+26.hours
+    #debugger
   end
 
   def new
@@ -33,21 +35,31 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.where(start: $temp_app.start).first
-    @appointment.user  = current_user
-    t = params[:appointment][:app_type]
-    t == 'Cleaning' ? @appointment.app_type = 0 : t == 'Root_Canal' ? @appointment.app_type = 1 : t == 'Extraction' ? @appointment.app_type = 2 :  @appointment.app_type = 3
-    t == 'Cleaning' ? @appointment.cost = 300 : t == 'Root_Canal' ? @appointment.cost = 350 : t == 'Extraction' ? @appointment.cost = 150 :  @appointment.cost = 900
-    @appointment.save
+    if @appointment.user == User.first
+      @appointment.user  = current_user
+      t = params[:appointment][:app_type]
+      t == 'Cleaning' ? @appointment.app_type = 0 : t == 'Root_Canal' ? @appointment.app_type = 1 : t == 'Extraction' ? @appointment.app_type = 2 :  @appointment.app_type = 3
+      t == 'Cleaning' ? @appointment.cost = 300 : t == 'Root_Canal' ? @appointment.cost = 350 : t == 'Extraction' ? @appointment.cost = 150 :  @appointment.cost = 900
+      @appointment.save
+    else
+      flash[:alert] = 'It seems the appointment was already booked. Apologies.'
+    end
     redirect_to list_of_apps_path
   end
 
-  def destroy
+  def cancel
+    @appointment = Appointment.find(params[:id].to_i)
+    @appointment.user = User.first
+    @appointment.cost = 300
+    @appointment.app_type = 0
+    @appointment.save
+    redirect_to list_of_apps_path
   end
 
   private
   def create_new_day
     dt  = Appointment.last.start.to_date+1
-    if dt < Date.today+14
+    if dt < Date.today+21
       dt += 1 while dt.on_weekend?
       dt += 8.hours
       for i in 0..17

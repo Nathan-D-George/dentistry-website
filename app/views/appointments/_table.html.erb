@@ -6,6 +6,7 @@
       <th scope="col">End-Time</th>
       <th scope="col">Purpose</th>
       <th scope="col">Action</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -33,8 +34,19 @@
           <% if app.user.email == @admin.email %>
             <%= link_to 'Book Slot', new_appointment_path(start: app.start), class:'btn btn-primary'%>
           <% else %>
-           <h4> <span class="badge bg-danger">Booked</span></h4>
+           <h5> <span class="badge bg-danger">Booked</span></h5>
           <% end %>
+        </td>
+        <td>
+           <% if current_user.email == app.user.email %>
+            <% if app.start > @time_limit %>
+              <%= link_to 'Cancel Booking', cancel_appointment_path(id: app.id), data:{turbo_method: :post, turbo_confrim: 'Cancel Appointment'}, class:'btn btn-outline-secondary'%>
+            <% else %>
+              <h5> <span class="badge bg-secondary">Too Soon to Cancel!</span></h5>
+            <% end %>
+          <% else %>
+            <h5> <span class="badge bg-warning">Other Patient</span></h5>
+           <% end %>
         </td>
       </tr>
     <% end %>
